@@ -23,7 +23,7 @@ def web_service(request):
 def browser():
     # Setup: initialize the WebDriver
     browser_options = Options()
-    browser_options.headless = os.environ.get('HEADLESS', False)
+    if os.environ.get('HEADLESS', False): browser_options.add_argument('--headless=new')
     driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=browser_options)   
     yield driver
     # Teardown: close the WebDriver
