@@ -1,6 +1,7 @@
 from selenium import webdriver
-import time, pytest
+import time, pytest, os
 from selenium.webdriver.edge.service import Service as EdgeService
+from selenium.webdriver.edge.options import Options
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from .nice_gui_UI import NiceGuiUI, potential_consumers
 from selenium.webdriver.common.by import By
@@ -22,7 +23,9 @@ def web_service(request):
 @pytest.fixture
 def browser():
     # Setup: initialize the WebDriver
-    driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))   
+    browser_options = Options()
+    browser_options.headless = os.environ.get('HEADLESS', False)
+    driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=browser_options)   
     yield driver
     # Teardown: close the WebDriver
     driver.quit() 
