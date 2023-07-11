@@ -5,7 +5,6 @@ from selenium.webdriver.edge.options import Options
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from .nice_gui_UI import NiceGuiUI, potential_consumers
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -34,7 +33,6 @@ def test_default_selection(browser):
     browser.get("http://127.0.0.1:8081")
     print(browser.title)
     time.sleep(1)
-    system_planner_label = browser.find_element(By.XPATH, '//div[text()="PV System Planner"]')
     default_selection = browser.find_element(By.ID,'add_device_dropdown_selection')
     assert default_selection.text == "Fridge"
 
