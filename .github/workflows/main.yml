@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is running Pytest for Nice GUI demo 🚀
 on: [push]
 jobs:
   Run-Pytest:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
