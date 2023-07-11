@@ -24,6 +24,7 @@ jobs:
       - name: Summary
         run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Keep test results as artifact
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: pytest-report
