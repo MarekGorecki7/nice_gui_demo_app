@@ -9,17 +9,17 @@ from .nice_gui_UI import main_page, potential_consumers
 from selenium.webdriver.common.by import By
 
 
-@pytest.fixture(scope="session", autouse=True)
-def web_service(request):
-    print("Start APP")
-    # Start the web service process
-    nicegui_ui = main_page()
-    # nicegui_ui.start_UI()
-    time.sleep(2)  # Give some time for the web service to start up
-    yield
-    # Teardown: close the web service process
-    # print("Kill APP")
-    # nicegui_ui.stop_UI()
+# @pytest.fixture(scope="session", autouse=True)
+# def web_service(request):
+#     print("Start APP")
+#     # Start the web service process
+#     nicegui_ui = main_page()
+#     # nicegui_ui.start_UI()
+#     time.sleep(2)  # Give some time for the web service to start up
+#     yield
+#     # Teardown: close the web service process
+#     # print("Kill APP")
+#     # nicegui_ui.stop_UI()
 
 
 @pytest.fixture
@@ -30,13 +30,17 @@ def browser():
         browser_options.add_argument('--headless=new')
     browser_options.add_experimental_option(
         'excludeSwitches', ['enable-logging'])
-    
-    browser_options.add_argument(
-        r"--user-data-dir=C:\Users\mGorecki\AppData\Local\Microsoft\Edge\User Data")
+    # browser_options.add_argument(
+    #     r"--user-data-dir=C:\Users\mGorecki\AppData\Local\Microsoft\Edge\User Data")
     browser_options.add_argument("--profile-directory=Default")
+    browser_options.add_argument("--remote-debugging-port=9222")
+    browser_options.add_argument("--no-sandbox")
+    browser_options.use_chromium = True
+    browser_options.add_argument("--window-size=1920,1080")
     driver = webdriver.Edge(
         service=EdgeService(
-            EdgeChromiumDriverManager().install()), options=browser_options) 
+            EdgeChromiumDriverManager().install()), options=browser_options)
+    driver.execute_script("window.moveTo(0, 0); window.resizeTo(screen.width, screen.height);")
     yield driver
     # Teardown: close the WebDriver
     driver.quit()

@@ -138,4 +138,3 @@ def main_page():
 if __name__ in {"__main__", "__mp_main__"}:
     app.on_startup(main_page)
     ui.run(port=8080, show=True, reload=False)
-
