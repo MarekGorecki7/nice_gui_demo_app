@@ -71,6 +71,7 @@ def test_consuption_preview(browser):
 
 
 def test_consumers_table(browser):
+    """Check the consumer tabel"""
     browser.get("http://127.0.0.1:8080")
     selected_consumers_table = browser.find_element(
         By.ID, 'selected_consumers_table')
@@ -79,8 +80,6 @@ def test_consumers_table(browser):
     assert amount_of_rows == 0
     add_device_button = browser.find_element(
         By.ID, 'add_selected_device_button')
-    add_device_button.click()
-    time.sleep(1)
     add_device_button.click()
     time.sleep(1)
     amount_of_rows = len(selected_consumers_table.find_elements(
