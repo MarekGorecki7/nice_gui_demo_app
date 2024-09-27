@@ -71,6 +71,7 @@ def test_consuption_preview(browser):
 
 
 def test_consumers_table(browser):
+    """Check the consumer tabel"""
     browser.get("http://127.0.0.1:8080")
     selected_consumers_table = browser.find_element(
         By.ID, 'selected_consumers_table')
