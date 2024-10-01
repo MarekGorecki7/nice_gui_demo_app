@@ -9,7 +9,7 @@ Python capable IDE
 
 Edge Browser
 
-Computer capable of running modern web applications ans tests at the same time
+Computer capable of running modern web applications and tests at the same time
 
 Windows script execution policy is set to `Set-ExecutionPolicy RemoteSigned` and error `"execution of scripts is disabled on this system"` does not when PowerShell script is executed.
 
