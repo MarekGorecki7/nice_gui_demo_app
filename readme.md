@@ -1,7 +1,7 @@
 # Prerequisites
 Python IDE
 
-Python 3 version installed
+Python 3.11.x version installed
 
 Github account
 
@@ -11,7 +11,7 @@ Edge Browser
 
 Computer capable of running modern web applications and tests at the same time
 
-Windows script execution policy is set to `Set-ExecutionPolicy RemoteSigned` and error `"execution of scripts is disabled on this system"` does not when PowerShell script is executed.
+Windows script execution policy is set to `Set-ExecutionPolicy RemoteSigned` and error `"execution of scripts is disabled on this system"` does not show up when PowerShell script is executed.
 
 # Tasks
 
