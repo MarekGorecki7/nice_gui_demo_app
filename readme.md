@@ -5,6 +5,14 @@ Python 3 version installed
 
 Github account
 
+Python capable IDE
+
+Edge Browser
+
+Computer capable of running modern web applications ans tests at the same time
+
+Windows execution policy allows executing scripts
+
 # Tasks
 
 ## 1. Fork the repository
