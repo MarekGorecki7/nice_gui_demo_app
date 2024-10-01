@@ -5,8 +5,6 @@ Python 3.11.x version installed
 
 Github account
 
-Python capable IDE
-
 Edge Browser
 
 Computer capable of running modern web applications and tests at the same time
