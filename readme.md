@@ -11,7 +11,7 @@ Edge Browser
 
 Computer capable of running modern web applications ans tests at the same time
 
-Windows execution policy allows executing scripts
+Windows script execution policy is set to `Set-ExecutionPolicy RemoteSigned` and error `"execution of scripts is disabled on this system"` does not when PowerShell script is executed.
 
 # Tasks
 
